@@ -1,0 +1,32 @@
+#include <iostream>
+
+using namespace std;
+class kidsgame
+{
+    public:
+        void clayMaking(){};
+};
+class standard1 : public kidsgame
+{
+    public:
+        void clayMaking()
+        {
+            cout<<"Round Shape"<<endl;
+        }
+};
+class standard2 : public kidsgame
+{
+    public:
+        void clayMaking()
+        {
+            cout<<"Rectangle Shape"<<endl;
+        }
+};
+int main()
+{
+    standard1 s1;
+    standard2 s2;
+    s1.clayMaking();
+    s2.clayMaking();
+    return 0;
+}
