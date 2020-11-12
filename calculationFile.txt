@@ -1,0 +1,44 @@
+#include <iostream>
+#include<fstream>
+#include<string.h>
+
+using namespace std;
+
+ifstream fin;
+ofstream fout;
+
+int main()
+{
+    int num;
+    int number;
+    string str1="";
+    fout.open("d:/fileCal.txt");
+    for(int i=0;i<5;i++)
+    {
+    cout<<"enter value"<<endl;
+    cin>>num;
+    str1=to_string(num);
+    fout<<str1<<"\n";
+    }
+    fout.close();
+
+    int total=0;
+    fin.open("d:/fileCal.txt");
+    while(!fin.eof())
+    {
+        fin>>number
+        cout<<number<<"\n";
+    }
+    fin.close();
+    fin.open("d:/fileCal.txt");
+    while(!fin.eof())
+    {
+
+        fin>>number;
+        total=total+number;
+    }
+    cout<<"Total:"<<total;
+
+    fin.close();
+    return 0;
+}
