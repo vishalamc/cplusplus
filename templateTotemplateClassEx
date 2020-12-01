@@ -1,0 +1,33 @@
+#include <iostream>
+
+using namespace std;
+template<class T>
+class base
+{
+public:
+    T num1;
+    void disp1()
+    {
+
+        cout<<num1<<endl;
+    }
+};
+template<class T>
+class derive:public base<int>
+{
+    public:
+    T num2;
+    void disp2()
+    {
+        cout<<num2<<endl;
+    }
+};
+int main()
+{
+    derive<int> d1;
+    d1.num1=8;
+    d1.num2=2;
+    d1.disp1();
+    d1.disp2();
+    return 0;
+}
