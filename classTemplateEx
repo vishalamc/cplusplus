@@ -1,0 +1,37 @@
+#include <iostream>
+
+using namespace std;
+template <class T>
+class Addition
+{
+private:
+    T num1;
+    T num2;
+    T result;
+public:
+    Addition()
+    {
+        num1=0;
+        num2=0;
+    }
+    T AddData(T a,T b)
+    {
+        num1=a;
+        num2=b;
+        result=num1+num2;
+        return result;
+    }
+    void getresult()
+    {
+        cout<<result;
+    }
+
+};
+int main()
+{
+    Addition <int> a1;
+    a1.AddData(3,5);
+    a1.getresult();
+
+    return 0;
+}
