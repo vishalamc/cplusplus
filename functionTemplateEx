@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+template <class T>
+T getArray(T num[],int size)
+{
+    T temp;
+    for (int i = 0; i < size; i++)
+    {
+        for (int j = i + 1; j < size; j++)
+        {
+            if (num[i] > num[j])
+            {
+                temp =  num[i];
+                num[i] = num[j];
+                num[j] = temp;
+            }
+        }
+    }
+    cout<<"Sorting Order Array: \n";
+    for (int i = 0; i <size; i++)
+        cout<<num[i]<<endl;
+    return temp;
+}
+int main()
+{
+float myarray[] = {88.5, 76.6, 76.7, 61.8, 61.1};
+getArray(myarray,5);
+ return 0;
+}
