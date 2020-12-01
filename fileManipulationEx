@@ -1,0 +1,40 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main()
+{
+    ofstream fout;
+	ifstream fin;
+	 char ch;
+
+    fin.open("d:/cpp/file1.txt");
+	cout<<"The current location in the file : " <<fin.tellg() << "\n";
+    cout<<"\nReading the content of file : \n";
+
+//Read the file until EOF is reached
+while(fin)
+{
+ch = fin.get();
+cout<<ch;
+}
+
+//Setting the EOF flag off, to allow the access of file again for reading
+fin.clear();
+
+cout<<"\n\nReading the content of file once again : \n";
+
+
+//Taking the get pointer at the zero byte location from the beginning of the file
+fin.seekg(2, ios::beg);
+
+//Reading the content of the file again
+while(fin)
+{
+ch = fin.get();
+cout<<ch;
+}
+return 0;
+}
+
+
