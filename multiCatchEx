@@ -1,0 +1,46 @@
+#include <iostream>
+
+using namespace std;
+void eligible(int age)
+{
+    try
+    {
+        if(age<18)
+        {
+            throw 1;
+        }
+        if(age>26)
+        {
+            throw 1.2f;
+        }
+        if(age==25)
+        {
+            cout<<"you are eligible you can participate"<<endl;
+        }
+        else{
+            throw 'd';
+        }
+
+    }
+    catch(int x)
+    {
+        cout<<"Your age is below 18 you can not participate"<<endl;
+    }
+    catch(float y)
+    {
+        cout<<"Your age is more then 26 you can not participate"<<endl;
+    }
+    catch(char t)
+    {
+        cout<<"Sorry you are not eligible"<<endl;
+    }
+
+}
+int main()
+{
+    int a;
+    cout<<"Enter your age"<<endl;
+    cin>>a;
+    eligible(a);
+    return 0;
+}
