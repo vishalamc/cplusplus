@@ -1,0 +1,44 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+
+using namespace std;
+
+class Box
+{
+    public:
+     int side;
+     Box(int length)
+     {
+       side=length;
+     }
+     Box(int length, int x)
+     {
+         side=x;
+      }
+      Box(Box &b)
+      {
+       side=b.side;
+      }
+   int getVolume()
+      {
+       return side*side*side;
+       }
+};
+int main()
+{
+Box b1(2);
+Box b2(2,3);
+Box b3=b1;
+
+cout<<b1.getVolume()<<endl;
+cout<<b2.getVolume()<<endl;
+cout<<b3.getVolume()<<endl;
+return 0;
+}  
