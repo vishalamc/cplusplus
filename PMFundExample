@@ -1,0 +1,53 @@
+
+#include <iostream>
+
+using namespace std;
+class PMFund
+{
+    protected:
+      double fundAmt;
+    public:
+      PMFund()
+      {
+          fundAmt=1250000;
+      }
+}p;
+class SBIBank:public PMFund
+{
+    protected:
+     double balAmt;
+     public:
+     SBIBank()
+     {
+         balAmt=25000;
+         fundAmt=1000;
+     }
+     
+};
+class Customer:public SBIBank
+{
+    public :
+     int cust_id;
+     string cust_name;
+     Customer()
+     {
+         cust_id=123456;
+         cust_name="kumar";
+     }
+     void calculateTotal()
+     {
+         double total=fundAmt+balAmt;
+         cout<<"Customer Id: "<<cust_id<<endl;
+         cout<<"Customer Name: "<<cust_name<<endl;
+         cout<<"Balance Amount: "<<total<<endl;
+     }
+};
+int main()
+{
+    PMFund p1;
+    SBIBank s1;
+    Customer c1;
+    c1.calculateTotal();
+
+    return 0;
+}
